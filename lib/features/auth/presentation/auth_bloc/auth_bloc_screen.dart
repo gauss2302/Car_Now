@@ -49,11 +49,11 @@ class AuthBlocScreenState extends State<AuthBlocScreen> {
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(currentState.errorMessage ),
+                Text(currentState.errorMessage),
                 Padding(
                   padding: const EdgeInsets.only(top: 32.0),
-                  child: RaisedButton(
-                    color: Colors.blue,
+                  child: ElevatedButton(
+                    // color: Colors.blue,
                     child: Text('reload'),
                     onPressed: _load,
                   ),
@@ -61,7 +61,7 @@ class AuthBlocScreenState extends State<AuthBlocScreen> {
               ],
             ));
           }
-           if (currentState is InAuthBlocState) {
+          if (currentState is InAuthBlocState) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -72,9 +72,8 @@ class AuthBlocScreenState extends State<AuthBlocScreen> {
             );
           }
           return Center(
-              child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(),
           );
-          
         });
   }
 
