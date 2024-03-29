@@ -1,6 +1,3 @@
-import 'package:cars/core/widgets/appbar.dart';
-import 'package:cars/core/widgets/drawer.dart';
-import 'package:cars/features/auth/presentation/LoginPage.dart';
 import 'package:cars/features/auth/presentation/SignUpPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

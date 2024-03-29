@@ -40,7 +40,7 @@ class AuthBlocScreenState extends State<AuthBlocScreen> {
           AuthBlocState currentState,
         ) {
           if (currentState is UnAuthBlocState) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
