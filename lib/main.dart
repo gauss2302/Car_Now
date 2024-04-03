@@ -63,9 +63,12 @@ class MyHomePage extends StatelessWidget {
                                         AppPallete.gradient1,
                                         AppPallete.gradient2
                                       ])),
-                                  child: Text(
-                                    'text $i',
-                                    style: const TextStyle(fontSize: 16.0),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      'text $i colorful pictures',
+                                      style: const TextStyle(fontSize: 16.0),
+                                    ),
                                   ));
                             },
                           );
