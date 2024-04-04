@@ -48,7 +48,11 @@ class MyHomePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     FlutterCarousel(
-                        items: [1, 2, 3, 4, 5].map((i) {
+                        items: [
+                          1,
+                          2,
+                          3,
+                        ].map((i) {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
