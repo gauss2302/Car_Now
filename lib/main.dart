@@ -87,8 +87,29 @@ class MyHomePage extends StatelessWidget {
                     Text(
                       'Welcome to Car Sharing App',
                     ),
-                    Text(
-                      'Welcome to Car Sharing App',
+                    Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpPage()),
+                            );
+                          },
+                          child: const Text('Sign Up'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpPage()),
+                            );
+                          },
+                          child: const Text('Sign In'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
