@@ -7,8 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+
+  String superbaseUrl = dotenv.env['SUPERBASE_URL']!;
+  String superbaseKey = dotenv.env['SUPERBASE_KEY']!;
+
+  final superbase =
+      await Supabase.initialize(url: superbaseUrl, anonKey: superbaseKey);
   runApp(const MyApp());
 }
 
@@ -28,9 +38,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +103,7 @@ class MyHomePage extends StatelessWidget {
                           showIndicator: false,
                           slideIndicator: const CircularSlideIndicator(),
                         )),
-                    Text(
+                    const Text(
                       'Welcome to Car Sharing App',
                     ),
                     Column(
@@ -103,6 +118,7 @@ class MyHomePage extends StatelessWidget {
                           },
                           child: const Text('Sign Up'),
                         ),
+                        const Text('Already have an account?'),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
@@ -111,7 +127,7 @@ class MyHomePage extends StatelessWidget {
                                   builder: (context) => const SignUpPage()),
                             );
                           },
-                          child: const Text('Sign In'),
+                          child: const Text('Sign Up'),
                         ),
                       ],
                     ),
