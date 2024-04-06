@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: const AppBarWidget(),
       drawer: const DrawerWidget(),
       bottomNavigationBar: const BottomNavBar(),
       body: Center(
