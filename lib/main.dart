@@ -4,8 +4,6 @@ import 'package:cars/core/widgets/bottomnavbar.dart';
 import 'package:cars/core/widgets/drawer.dart';
 import 'package:cars/features/auth/presentation/SignUpPage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
