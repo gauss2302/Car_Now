@@ -3,20 +3,22 @@ import 'package:cars/core/widgets/appbar.dart';
 import 'package:cars/core/widgets/bottomnavbar.dart';
 import 'package:cars/core/widgets/drawer.dart';
 import 'package:cars/features/auth/presentation/SignUpPage.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
-  String superbaseUrl = dotenv.env['SUPERBASE_URL']!;
-  String superbaseKey = dotenv.env['SUPERBASE_KEY']!;
+  await Firebase.initializeApp();
 
-  final superbase =
-      await Supabase.initialize(url: superbaseUrl, anonKey: superbaseKey);
+  // String superbaseUrl = dotenv.env['SUPERBASE_URL']!;
+  // String superbaseKey = dotenv.env['SUPERBASE_KEY']!;
+
+  // final superbase =
+  //     await Supabase.initialize(url: superbaseUrl, anonKey: superbaseKey);
   runApp(const MyApp());
 }
 

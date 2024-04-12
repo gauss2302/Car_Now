@@ -44,6 +44,8 @@ dependencies:
   fpdart: ^1.1.0
   supabase_flutter: ^2.4.0
   flutter_dotenv: ^5.1.0
+  firebase_auth: ^4.19.1
+  firebase_core: ^2.29.0
 
 dev_dependencies:
   flutter_test:
