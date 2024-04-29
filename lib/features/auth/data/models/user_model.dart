@@ -1,5 +1,4 @@
 import 'package:cars/features/auth/domain/entities/user_entitires.dart';
-import 'package:flutter/foundation.dart';
 
 class UserModel extends User {
   UserModel({

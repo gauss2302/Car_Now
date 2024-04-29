@@ -1,4 +1,5 @@
 import 'package:cars/features/auth/data/models/user_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract interface class AuthDataSourceRemote {
   Future<UserModel> signUpWithEmailPassword({
@@ -26,4 +27,18 @@ class AuthRemoteDataSourceImpl implements AuthDataSourceRemote {
     // TODO: implement signUpWithEmailPassword
     throw UnimplementedError();
   }
+
+  // @override
+  // Future<UserModel> signUpWithEmailPassword(
+  //     {required String name,
+  //     required String email,
+  //     required String password}) async {
+  //       try {
+  //         final res = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+  //           email: email,
+  //           password: password,
+  //         );
+  //       } catch (e) {
+
+  //       }
 }

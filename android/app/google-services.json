@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "810575566034",
+    "project_id": "wroom-ea1b3",
+    "storage_bucket": "wroom-ea1b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810575566034:android:f7ab1d8ef1ac67920b090b",
+        "android_client_info": {
+          "package_name": "com.example.cars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810575566034-mlkgsen6jht9t4evfhve8596af4bhnv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmXIkwRitooAcXP-KSCXpFx58kt1r-cZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810575566034-mlkgsen6jht9t4evfhve8596af4bhnv9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "810575566034-l1fbb4kev92fen4mc8fj0evrlitkncej.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cars"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
