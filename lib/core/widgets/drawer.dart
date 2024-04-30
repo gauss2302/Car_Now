@@ -18,12 +18,19 @@ class DrawerWidget extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Drawer Header',
+                  'Drawer Header!',
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(width: 10),
-                Icon(Icons.menu, color: Colors.black)
+                Icon(Icons.menu, color: Colors.black),
+                FlutterLogo(
+                  size: BorderSide.strokeAlignCenter,
+                ),
+                Icon(
+                  Icons.abc,
+                  color: Colors.black,
+                ),
               ],
             ),
           ),
