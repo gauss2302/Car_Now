@@ -3,14 +3,14 @@ import 'package:cars/features/auth/domain/entities/user_entitires.dart';
 import 'package:fpdart/fpdart.dart';
 
 abstract interface class AuthRepo {
-  Future<Either<Failure, User>> signUpWithEmailPassword({
+  Future<Either<Failure, UserEntities>> signUpWithEmailPassword({
     required String name,
     required String email,
     required String password,
   });
-  Future<Either<Failure, User>> signInWithEmailPassword({
+  Future<Either<Failure, UserEntities>> signInWithEmailPassword({
     required String email,
     required String password,
   });
-  Future<Either<Failure, User>> currentUser();
+  Future<Either<Failure, UserEntities>> currentUser();
 }
