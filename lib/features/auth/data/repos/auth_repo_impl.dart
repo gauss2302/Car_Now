@@ -15,44 +15,42 @@ enum AuthStatus {
   unauthenticated,
 }
 
-// class AuthRepoImpl implements AuthRepo {
-//   final AuthDataSourceRemote remoteDataSourse;
-//   final ConnectionChecker connectionChecker;
+class AuthRepoImpl implements AuthRepo {
+  final AuthDataSourceRemote remoteDataSourse;
+  final ConnectionChecker connectionChecker;
 
-//   AuthRepoImpl(this.remoteDataSourse, this.connectionChecker);
+  AuthRepoImpl(this.remoteDataSourse, this.connectionChecker);
 
-//   @override
-//   Future<Either<Failure, UserModel>> currentUser() {
-//     // TODO: implement currentUser
-//     throw UnimplementedError();
-//   }
+  Future<Either<Failure, UserModel>> _getUser(
+      Future<UserEntities> Function() fn) async {
+    try {
+      if (!await (connectionChecker.isConnected)) {
+        return left(Failure('No internet connection'));
+      }
+      final user = await fn();
+      return right(user as UserModel);
+    } on ServerException catch (e) {
+      return left(Failure(e.message));
+    }
+  }
 
-//   @override
-//   Future<Either<Failure, UserModel>> signInWithEmailPassword(
-//       {required String email, required String password}) async {
-//     return _getUser(() => )
-    
-//   }
+  @override
+  Future<Either<Failure, UserEntities>> currentUser() {
+    // TODO: implement currentUser
+    throw UnimplementedError();
+  }
 
-//   @override
-//   Future<Either<Failure, UserModel>> signUpWithEmailPassword(
-//       {required String id, required String email, required String name, required String photoUrl}) {
-//     // TODO: implement signUpWithEmailPassword
-//     throw UnimplementedError();
-//   }
+  @override
+  Future<Either<Failure, UserEntities>> signInWithEmailPassword(
+      {required String email, required String password}) {
+    // TODO: implement signInWithEmailPassword
+    throw UnimplementedError();
+  }
 
-//   Future<Either<Failure, UserModel>> _getUser(
-//       Future<UserEntities> Function() fn) async {
-//     try {
-//       if (!await (connectionChecker.isConnected)) {
-//         return left(Failure('No internet connection'));
-//       }
-//       final user = await fn();
-//       return right(user);
-//     } on ServerException catch (e) {
-//       return left(Failure(e.message));
-//     }
-//   }
-// }
-
-
+  @override
+  Future<Either<Failure, UserEntities>> signUpWithEmailPassword(
+      {required String name, required String email, required String password}) {
+    // TODO: implement signUpWithEmailPassword
+    throw UnimplementedError();
+  }
+}

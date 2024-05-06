@@ -191,6 +191,12 @@ class _$UserModelImpl with DiagnosticableTreeMixin implements _UserModel {
       this,
     );
   }
+
+  @override
+  UserEntities toEntity() {
+    // TODO: implement toEntity
+    throw UnimplementedError();
+  }
 }
 
 abstract class _UserModel implements UserModel {

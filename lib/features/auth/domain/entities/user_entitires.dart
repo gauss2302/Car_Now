@@ -17,13 +17,12 @@ class UserEntities extends Equatable {
   @override
   List<Object?> get props => [id, email, name, photoUrl];
 
-  @override
-  // TODO: implement copyWith
-  $UserModelCopyWith<UserModel> get copyWith => throw UnimplementedError();
-
-  @override
   Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    throw UnimplementedError();
+    return {
+      'id': id,
+      'email': email,
+      'name': name,
+      'photoUrl': photoUrl,
+    };
   }
 }
