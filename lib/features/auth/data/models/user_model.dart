@@ -1,36 +1,19 @@
 import 'package:cars/features/auth/domain/entities/user_entitires.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-class UserModel {
-  UserModel({
-    required id,
-    required email,
-    required name,
-  });
+part 'user_model.freezed.dart';
+part 'user_model.g.dart';
 
-  factory UserModel.fromJson(Map<String, dynamic> map) {
-    return UserModel(
-      id: map['id'] ?? '',
-      email: map['email'] ?? '',
-      name: map['name'] ?? '',
-      // photoUrl: map['photoUrl'] ?? '',
-    );
-  }
+@freezed
+class UserModel with _$UserModel {
+  const factory UserModel({
+    required String id,
+    required String name,
+    required String email,
+    String? photoUrl,
+  }) = _UserModel;
 
-  factory UserModel.fromEntity(UserEntities entity) {
-    return UserModel(
-      id: entity.id,
-      email: entity.email,
-      name: entity.name,
-      // photoUrl: entity.photoUrl,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': super.id,
-      'email': super.email,
-      'name': super.name,
-      // 'photoUrl': super.photoUrl,
-    };
-  }
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 }

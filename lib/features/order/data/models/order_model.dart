@@ -29,9 +29,9 @@ import 'package:cars/features/order/domain/entities/order_entity.dart';
 //   }
 // }
 
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:freezed_annotation/freezed_annotation.dart';
+// import 'package:flutter/foundation.dart';
 
 
-part 'order_model.freezed.dart'
-part 'order_model.g.dart'
+// part 'order_model.freezed.dart'
+// part 'order_model.g.dart'
