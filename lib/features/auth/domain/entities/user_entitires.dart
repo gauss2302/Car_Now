@@ -1,7 +1,7 @@
 import 'package:cars/features/auth/data/models/user_model.dart';
 import 'package:equatable/equatable.dart';
 
-class UserEntities extends Equatable implements UserModel {
+class UserEntities extends Equatable {
   final String id;
   final String email;
   final String name;
