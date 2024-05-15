@@ -1,5 +1,4 @@
 import 'package:cars/features/auth/domain/entities/user_entitires.dart';
-import 'package:cars/features/order/presentation/bloc/order_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
