@@ -1,14 +1,18 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:cars/features/home/presentation/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
+  runZonedGuarded(() {
+    WidgetsFlutterBinding.ensureInitialized();
+    Firebase.initializeApp();
+
+    runApp(const MyApp());
+  }, (error, stack) => log('$error', name: 'Error', stackTrace: stack));
 }
 
 class MyApp extends StatelessWidget {
