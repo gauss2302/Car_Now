@@ -1,18 +1,10 @@
-import 'dart:async';
-import 'dart:developer';
-
+import 'package:cars/bootstrap.dart';
 import 'package:cars/features/home/presentation/pages/home_page.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
 
 void main() async {
-  runZonedGuarded(() {
-    WidgetsFlutterBinding.ensureInitialized();
-    Firebase.initializeApp();
-
-    runApp(const MyApp());
-  }, (error, stack) => log('$error', name: 'Error', stackTrace: stack));
+  await bootstrap(() => const MyApp());
 }
 
 class MyApp extends StatelessWidget {
